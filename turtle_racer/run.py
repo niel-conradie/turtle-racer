@@ -4,7 +4,7 @@ from turtle_racer import TurtleRacer
 
 
 def run():
-    """ Turtle Racer """
+    """ Turtle Racer. """
     run = TurtleRacer()
 
     # Display screen.
