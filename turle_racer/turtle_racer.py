@@ -53,7 +53,8 @@ class TurtleRacer:
 
         # White square row 2.
         for i in range(13):
-            turtle.goto(495 + square_size, (240 - square_size) - (i * square_size * 2))
+            turtle.goto(495 + square_size, (240 - square_size) -
+                        (i * square_size * 2))
             turtle.stamp()
 
         # Black square row 1.
@@ -64,7 +65,8 @@ class TurtleRacer:
 
         # Black square row 2.
         for i in range(13):
-            turtle.goto(495 + square_size, (260 - square_size) - (i * square_size * 2))
+            turtle.goto(495 + square_size, (260 - square_size) -
+                        (i * square_size * 2))
             turtle.stamp()
 
     @staticmethod
