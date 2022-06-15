@@ -217,6 +217,7 @@ class TurtleRacer:
                 green.xcor() <= 450 and cyan.xcor() <= 450 and \
                 blue.xcor() <= 450 and purple.xcor() <= 450 and \
                 magenta.xcor() <= 450 and pink.xcor() <= 450:
+
             # Move turtles forward at random speed.
             red.forward(random.randint(5, 15))
             orange.forward(random.randint(5, 15))
@@ -238,6 +239,7 @@ class TurtleRacer:
                 red.xcor() > cyan.xcor() and red.xcor() > blue.xcor() and \
                 red.xcor() > purple.xcor() and red.xcor() > magenta.xcor() and \
                 red.xcor() > pink.xcor():
+
             print("Red Turtle Wins!")
             for i in range(72):
                 red.right(5)
@@ -249,6 +251,7 @@ class TurtleRacer:
                 orange.xcor() > blue.xcor() and orange.xcor() > purple.xcor() and \
                 orange.xcor() > magenta.xcor() and orange.xcor() > pink.xcor() and \
                 orange.xcor() > red.xcor():
+
             print("Orange Turtle Wins!")
             for i in range(72):
                 orange.right(5)
@@ -260,6 +263,7 @@ class TurtleRacer:
                 yellow.xcor() > purple.xcor() and yellow.xcor() > magenta.xcor() and \
                 yellow.xcor() > pink.xcor() and yellow.xcor() > red.xcor() and \
                 yellow.xcor() > orange.xcor():
+
             print("Yellow Turtle Wins!")
             for i in range(72):
                 yellow.right(5)
@@ -271,6 +275,7 @@ class TurtleRacer:
                 lime.xcor() > magenta.xcor() and lime.xcor() > pink.xcor() and \
                 lime.xcor() > red.xcor() and lime.xcor() > orange.xcor() and \
                 lime.xcor() > yellow.xcor():
+
             print("Lime Turtle Wins!")
             for i in range(72):
                 lime.right(5)
@@ -282,6 +287,7 @@ class TurtleRacer:
                 green.xcor() > pink.xcor() and green.xcor() > red.xcor() and \
                 green.xcor() > orange.xcor() and green.xcor() > yellow.xcor() and \
                 green.xcor() > lime.xcor():
+
             print("Green Turtle Wins!")
             for i in range(72):
                 green.right(5)
@@ -293,6 +299,7 @@ class TurtleRacer:
                 cyan.xcor() > red.xcor() and cyan.xcor() > orange.xcor() and \
                 cyan.xcor() > yellow.xcor() and cyan.xcor() > lime.xcor() and \
                 cyan.xcor() > green.xcor():
+
             print("Cyan Turtle Wins!")
             for i in range(72):
                 cyan.right(5)
@@ -304,6 +311,7 @@ class TurtleRacer:
                 blue.xcor() > orange.xcor() and blue.xcor() > yellow.xcor() and \
                 blue.xcor() > lime.xcor() and blue.xcor() > green.xcor() and \
                 blue.xcor() > cyan.xcor():
+
             print("Blue Turtle Wins!")
             for i in range(72):
                 blue.right(5)
@@ -315,6 +323,7 @@ class TurtleRacer:
                 purple.xcor() > yellow.xcor() and purple.xcor() > lime.xcor() and \
                 purple.xcor() > green.xcor() and purple.xcor() > cyan.xcor() and \
                 purple.xcor() > blue.xcor():
+
             print("Purple Turtle Wins!")
             for i in range(72):
                 purple.right(5)
@@ -326,6 +335,7 @@ class TurtleRacer:
                 magenta.xcor() > lime.xcor() and magenta.xcor() > green.xcor() and \
                 magenta.xcor() > cyan.xcor() and magenta.xcor() > blue.xcor() and \
                 magenta.xcor() > purple.xcor():
+
             print("Magenta Turtle Wins!")
             for i in range(72):
                 magenta.right(5)
@@ -337,7 +347,26 @@ class TurtleRacer:
                 pink.xcor() > green.xcor() and pink.xcor() > cyan.xcor() and \
                 pink.xcor() > blue.xcor() and pink.xcor() > purple.xcor() and \
                 pink.xcor() > magenta.xcor():
+
             print("Pink Turtle Wins!")
             for i in range(72):
                 pink.right(5)
                 pink.shapesize(3)
+
+    @staticmethod
+    def restart():
+        """ Requesting user input and validating choice. """
+        while True:
+            user_input = turtle.textinput(
+                "Restart", "\nRestart? Yes/No: ").lower()
+            choices = ['yes', 'no']
+            if user_input not in choices:
+                print("\nPlease type 'yes' or 'no'")
+                continue
+
+            # User input conditions.
+            if user_input == 'yes':
+                return
+            if user_input == 'no':
+                print("\nThank you for playing!")
+                quit()
