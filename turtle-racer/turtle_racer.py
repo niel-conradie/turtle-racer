@@ -70,144 +70,18 @@ class TurtleRacer:
             turtle.stamp()
 
     @staticmethod
-    def turtle_red():
-        """ Create a red turtle. """
-        red = turtle.Turtle()
-        red.color('red')
-        red.shape('turtle')
-        red.shapesize(1.75)
-        red.pensize(5)
-        red.speed(7.5)
-        red.penup()
-        red.goto(-510, 215)
-        red.pendown()
-        return red
-
-    @staticmethod
-    def turtle_orange():
-        """ Create a orange turtle. """
-        orange = turtle.Turtle()
-        orange.color('orange')
-        orange.shape('turtle')
-        orange.shapesize(1.75)
-        orange.pensize(5)
-        orange.speed(7.5)
-        orange.penup()
-        orange.goto(-510, 165)
-        orange.pendown()
-        return orange
-
-    @staticmethod
-    def turtle_yellow():
-        """ Create a yellow turtle. """
-        yellow = turtle.Turtle()
-        yellow.color('yellow')
-        yellow.shape('turtle')
-        yellow.shapesize(1.75)
-        yellow.pensize(5)
-        yellow.speed(7.5)
-        yellow.penup()
-        yellow.goto(-510, 115)
-        yellow.pendown()
-        return yellow
-
-    @staticmethod
-    def turtle_lime():
-        """ Create a lime turtle. """
-        lime = turtle.Turtle()
-        lime.color('lime')
-        lime.shape('turtle')
-        lime.shapesize(1.75)
-        lime.pensize(5)
-        lime.speed(7.5)
-        lime.penup()
-        lime.goto(-510, 65)
-        lime.pendown()
-        return lime
-
-    @staticmethod
-    def turtle_green():
-        """ Create a green turtle. """
-        green = turtle.Turtle()
-        green.color('green')
-        green.shape('turtle')
-        green.shapesize(1.75)
-        green.pensize(5)
-        green.speed(7.5)
-        green.penup()
-        green.goto(-510, 15)
-        green.pendown()
-        return green
-
-    @staticmethod
-    def turtle_cyan():
-        """ Create a cyan turtle. """
-        cyan = turtle.Turtle()
-        cyan.color('cyan')
-        cyan.shape('turtle')
-        cyan.shapesize(1.75)
-        cyan.pensize(5)
-        cyan.speed(7.5)
-        cyan.penup()
-        cyan.goto(-510, -35)
-        cyan.pendown()
-        return cyan
-
-    @staticmethod
-    def turtle_blue():
-        """ Create a blue turtle. """
-        blue = turtle.Turtle()
-        blue.color('blue')
-        blue.shape('turtle')
-        blue.shapesize(1.75)
-        blue.pensize(5)
-        blue.speed(7.5)
-        blue.penup()
-        blue.goto(-510, -85)
-        blue.pendown()
-        return blue
-
-    @staticmethod
-    def turtle_purple():
-        """ Create a purple turtle. """
-        purple = turtle.Turtle()
-        purple.color('purple')
-        purple.shape('turtle')
-        purple.shapesize(1.75)
-        purple.pensize(5)
-        purple.speed(7.5)
-        purple.penup()
-        purple.goto(-510, -135)
-        purple.pendown()
-        return purple
-
-    @staticmethod
-    def turtle_magenta():
-        """ Create a magenta turtle. """
-        magenta = turtle.Turtle()
-        magenta.color('magenta')
-        magenta.shape('turtle')
-        magenta.shapesize(1.75)
-        magenta.pensize(5)
-        magenta.speed(7.5)
-        magenta.penup()
-        magenta.goto(-510, -185)
-        magenta.pendown()
-        return magenta
-
-    @staticmethod
-    def turtle_pink():
-        """ Create a pink turtle. """
-        pink = turtle.Turtle()
-        pink.color('pink')
-        pink.shape('turtle')
-        pink.shapesize(1.75)
-        pink.pensize(5)
-        pink.speed(7.5)
-        pink.penup()
-        pink.goto(-510, -235)
-        pink.pendown()
-        return pink
+    def create_turtle(color, x, y):
+        """ Create a turtle racer. """
+        racer = turtle.Turtle()
+        racer.color(color)
+        racer.shape('turtle')
+        racer.shapesize(1.75)
+        racer.pensize(5)
+        racer.speed(7.5)
+        racer.penup()
+        racer.goto(x, y)
+        racer.pendown()
+        return racer
 
     @staticmethod
     def race(red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
