@@ -4,7 +4,7 @@ from turtle_racer import TurtleRacer
 
 
 def run():
-    """ Turtle Racer """
+    """ Turtle Racer. """
     run = TurtleRacer()
 
     # Display screen.
@@ -19,16 +19,16 @@ def run():
         run.draw_finish_line()
 
         # Create turtle racers.
-        red = run.turtle_red()
-        orange = run.turtle_orange()
-        yellow = run.turtle_yellow()
-        lime = run.turtle_lime()
-        green = run.turtle_green()
-        cyan = run.turtle_cyan()
-        blue = run.turtle_blue()
-        purple = run.turtle_purple()
-        magenta = run.turtle_magenta()
-        pink = run.turtle_pink()
+        red = run.create_turtle('red', -510, 215)
+        orange = run.create_turtle('orange', -510, 165)
+        yellow = run.create_turtle('yellow', -510, 115)
+        lime = run.create_turtle('lime', -510, 65)
+        green = run.create_turtle('green', -510, 15)
+        cyan = run.create_turtle('cyan', -510, -35)
+        blue = run.create_turtle('blue', -510, -85)
+        purple = run.create_turtle('purple', -510, -135)
+        magenta = run.create_turtle('magenta', -510, -185)
+        pink = run.create_turtle('pink', -510, -235)
 
         # Pause for a second.
         time.sleep(1)
