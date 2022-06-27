@@ -105,7 +105,7 @@ class TurtleRacer:
             pink.forward(random.randint(5, 15))
 
     @staticmethod
-    def win_condition(red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
+    def win_condition(run, red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
         """ Win conditional statements. """
         # Red turtle wins.
         if red.xcor() > orange.xcor() and red.xcor() > yellow.xcor() and \
@@ -114,10 +114,8 @@ class TurtleRacer:
                 red.xcor() > purple.xcor() and red.xcor() > magenta.xcor() and \
                 red.xcor() > pink.xcor():
 
-            print("Red Turtle Wins!")
-            for i in range(72):
-                red.right(5)
-                red.shapesize(3)
+            print("\nRed Turtle Wins!")
+            run.celebrate(red)
 
         # Orange turtle wins.
         if orange.xcor() > yellow.xcor() and orange.xcor() > lime.xcor() and \
@@ -126,10 +124,8 @@ class TurtleRacer:
                 orange.xcor() > magenta.xcor() and orange.xcor() > pink.xcor() and \
                 orange.xcor() > red.xcor():
 
-            print("Orange Turtle Wins!")
-            for i in range(72):
-                orange.right(5)
-                orange.shapesize(3)
+            print("\nOrange Turtle Wins!")
+            run.celebrate(orange)
 
         # Yellow turtle wins.
         if yellow.xcor() > lime.xcor() and yellow.xcor() > green.xcor() and \
@@ -138,10 +134,8 @@ class TurtleRacer:
                 yellow.xcor() > pink.xcor() and yellow.xcor() > red.xcor() and \
                 yellow.xcor() > orange.xcor():
 
-            print("Yellow Turtle Wins!")
-            for i in range(72):
-                yellow.right(5)
-                yellow.shapesize(3)
+            print("\nYellow Turtle Wins!")
+            run.celebrate(yellow)
 
         # Lime turtle wins.
         if lime.xcor() > green.xcor() and lime.xcor() > cyan.xcor() and \
@@ -150,10 +144,8 @@ class TurtleRacer:
                 lime.xcor() > red.xcor() and lime.xcor() > orange.xcor() and \
                 lime.xcor() > yellow.xcor():
 
-            print("Lime Turtle Wins!")
-            for i in range(72):
-                lime.right(5)
-                lime.shapesize(3)
+            print("\nLime Turtle Wins!")
+            run.celebrate(lime)
 
         # Green turtle wins.
         if green.xcor() > cyan.xcor() and green.xcor() > blue.xcor() and \
@@ -162,10 +154,8 @@ class TurtleRacer:
                 green.xcor() > orange.xcor() and green.xcor() > yellow.xcor() and \
                 green.xcor() > lime.xcor():
 
-            print("Green Turtle Wins!")
-            for i in range(72):
-                green.right(5)
-                green.shapesize(3)
+            print("\nGreen Turtle Wins!")
+            run.celebrate(green)
 
         # Cyan turtle wins.
         if cyan.xcor() > blue.xcor() and cyan.xcor() > purple.xcor() and \
@@ -174,10 +164,8 @@ class TurtleRacer:
                 cyan.xcor() > yellow.xcor() and cyan.xcor() > lime.xcor() and \
                 cyan.xcor() > green.xcor():
 
-            print("Cyan Turtle Wins!")
-            for i in range(72):
-                cyan.right(5)
-                cyan.shapesize(3)
+            print("\nCyan Turtle Wins!")
+            run.celebrate(cyan)
 
         # Blue turtle wins.
         if blue.xcor() > purple.xcor() and blue.xcor() > magenta.xcor() and \
@@ -186,10 +174,8 @@ class TurtleRacer:
                 blue.xcor() > lime.xcor() and blue.xcor() > green.xcor() and \
                 blue.xcor() > cyan.xcor():
 
-            print("Blue Turtle Wins!")
-            for i in range(72):
-                blue.right(5)
-                blue.shapesize(3)
+            print("\nBlue Turtle Wins!")
+            run.celebrate(blue)
 
         # Purple turtle wins.
         if purple.xcor() > magenta.xcor() and purple.xcor() > pink.xcor() and \
@@ -198,10 +184,8 @@ class TurtleRacer:
                 purple.xcor() > green.xcor() and purple.xcor() > cyan.xcor() and \
                 purple.xcor() > blue.xcor():
 
-            print("Purple Turtle Wins!")
-            for i in range(72):
-                purple.right(5)
-                purple.shapesize(3)
+            print("\nPurple Turtle Wins!")
+            run.celebrate(purple)
 
         # Magenta turtle wins.
         if magenta.xcor() > pink.xcor() and magenta.xcor() > red.xcor() and \
@@ -210,10 +194,8 @@ class TurtleRacer:
                 magenta.xcor() > cyan.xcor() and magenta.xcor() > blue.xcor() and \
                 magenta.xcor() > purple.xcor():
 
-            print("Magenta Turtle Wins!")
-            for i in range(72):
-                magenta.right(5)
-                magenta.shapesize(3)
+            print("\nMagenta Turtle Wins!")
+            run.celebrate(magenta)
 
         # Pink turtle wins.
         if pink.xcor() > red.xcor() and pink.xcor() > orange.xcor() and \
@@ -222,10 +204,15 @@ class TurtleRacer:
                 pink.xcor() > blue.xcor() and pink.xcor() > purple.xcor() and \
                 pink.xcor() > magenta.xcor():
 
-            print("Pink Turtle Wins!")
-            for i in range(72):
-                pink.right(5)
-                pink.shapesize(3)
+            print("\nPink Turtle Wins!")
+            run.celebrate(pink)
+
+    @staticmethod
+    def celebrate(turtle):
+        """ Winning turtle celebrates. """
+        for i in range(72):
+            turtle.right(5)
+            turtle.shapesize(3)
 
     @staticmethod
     def restart():
