@@ -1,5 +1,4 @@
-import time
-
+from time import sleep
 from turtle_racer import TurtleRacer
 
 
@@ -30,15 +29,28 @@ def run():
         magenta = run.create_turtle('magenta', -510, -185)
         pink = run.create_turtle('pink', -510, -235)
 
+        # Display color options.
+        run.display_options()
+        # Requesting user input.
+        racer = run.select_turtle()
+        # Requesting user input.
+        amount = run.place_bet()
+
         # Pause for a second.
-        time.sleep(1)
+        sleep(1)
 
         # Starting the race.
         run.race(red, orange, yellow, lime, green,
                  cyan, blue, purple, magenta, pink)
-        # Win conditions.
-        run.win_condition(red, orange, yellow, lime, green,
-                          cyan, blue, purple, magenta, pink)
+        # Winning turtle conditions.
+        winner = run.win_condition(
+            red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink)
+        # Winning turtle bet conditions.
+        run.bet_condition(winner, racer, amount)
+        # Display available credits.
+        run.display_credits()
+        # Verify available credits.
+        run.check_credits()
         # Requesting user input.
         run.restart()
 
