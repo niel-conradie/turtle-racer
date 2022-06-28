@@ -1,5 +1,6 @@
 import turtle
-import random
+
+from random import randint
 
 
 class TurtleRacer:
@@ -84,6 +85,63 @@ class TurtleRacer:
         return racer
 
     @staticmethod
+    def display_options():
+        """ Display available color options. """
+        print("\nColors: Red, Orange, Yellow, Lime, Green,\n "
+              "       Cyan, Blue, Purple, Magenta, Pink.")
+
+    @staticmethod
+    def select_turtle():
+        """ Requesting user input and validating choice. """
+        while True:
+            user_input = turtle.textinput("Select Turtle", "Color: ").lower()
+            choices = ['red', 'orange', 'yellow', 'lime', 'green',
+                       'cyan', 'blue', 'purple', 'magenta', 'pink']
+            if user_input not in choices:
+                print(f"\n{user_input} is not an valid choice!")
+                continue
+            else:
+                return user_input
+
+    def place_bet(self):
+        """ Requesting user input and validating number. """
+        while True:
+            user_input = turtle.numinput(
+                "Place Bet", f"Credits: {int(self.credits)}")
+            if user_input > self.credits:
+                print("\nInsufficient funds!")
+                continue
+            elif user_input < 0:
+                print("\nThat is not a valid bet.")
+                continue
+            else:
+                return user_input
+
+    def bet_condition(self, winner, racer, amount):
+        """ Add or subtract bet condition. """
+        if winner == racer:
+            self.credits += (amount * 2)
+            return amount
+        else:
+            self.credits -= amount
+            return amount
+
+    def display_credits(self):
+        """ Display available credits. """
+        print(f"\nCredits: {int(self.credits)}")
+
+    def check_credits(self):
+        """ Check available credits."""
+        if self.credits == 0:
+            print("\nGame Over!")
+            self.reset_credits()
+            return
+
+    def reset_credits(self):
+        """ Reset credits to default value. """
+        self.credits = 1000
+
+    @staticmethod
     def race(red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
         """ Start the race. """
         while red.xcor() <= 450 and orange.xcor() <= 450 and \
@@ -93,16 +151,16 @@ class TurtleRacer:
                 magenta.xcor() <= 450 and pink.xcor() <= 450:
 
             # Move turtles forward at random speed.
-            red.forward(random.randint(5, 15))
-            orange.forward(random.randint(5, 15))
-            yellow.forward(random.randint(5, 15))
-            lime.forward(random.randint(5, 15))
-            green.forward(random.randint(5, 15))
-            cyan.forward(random.randint(5, 15))
-            blue.forward(random.randint(5, 15))
-            purple.forward(random.randint(5, 15))
-            magenta.forward(random.randint(5, 15))
-            pink.forward(random.randint(5, 15))
+            red.forward(randint(5, 15))
+            orange.forward(randint(5, 15))
+            yellow.forward(randint(5, 15))
+            lime.forward(randint(5, 15))
+            green.forward(randint(5, 15))
+            cyan.forward(randint(5, 15))
+            blue.forward(randint(5, 15))
+            purple.forward(randint(5, 15))
+            magenta.forward(randint(5, 15))
+            pink.forward(randint(5, 15))
 
     def win_condition(self, red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
         """ Win conditional statements. """
@@ -115,6 +173,7 @@ class TurtleRacer:
 
             print("\nRed Turtle Wins!")
             self.celebrate(red)
+            return 'red'
 
         # Orange turtle wins.
         if orange.xcor() > yellow.xcor() and orange.xcor() > lime.xcor() and \
@@ -125,6 +184,7 @@ class TurtleRacer:
 
             print("\nOrange Turtle Wins!")
             self.celebrate(orange)
+            return 'orange'
 
         # Yellow turtle wins.
         if yellow.xcor() > lime.xcor() and yellow.xcor() > green.xcor() and \
@@ -135,6 +195,7 @@ class TurtleRacer:
 
             print("\nYellow Turtle Wins!")
             self.celebrate(yellow)
+            return 'yellow'
 
         # Lime turtle wins.
         if lime.xcor() > green.xcor() and lime.xcor() > cyan.xcor() and \
@@ -145,6 +206,7 @@ class TurtleRacer:
 
             print("\nLime Turtle Wins!")
             self.celebrate(lime)
+            return 'lime'
 
         # Green turtle wins.
         if green.xcor() > cyan.xcor() and green.xcor() > blue.xcor() and \
@@ -155,6 +217,7 @@ class TurtleRacer:
 
             print("\nGreen Turtle Wins!")
             self.celebrate(green)
+            return 'green'
 
         # Cyan turtle wins.
         if cyan.xcor() > blue.xcor() and cyan.xcor() > purple.xcor() and \
@@ -165,6 +228,7 @@ class TurtleRacer:
 
             print("\nCyan Turtle Wins!")
             self.celebrate(cyan)
+            return 'cyan'
 
         # Blue turtle wins.
         if blue.xcor() > purple.xcor() and blue.xcor() > magenta.xcor() and \
@@ -175,6 +239,7 @@ class TurtleRacer:
 
             print("\nBlue Turtle Wins!")
             self.celebrate(blue)
+            return 'blue'
 
         # Purple turtle wins.
         if purple.xcor() > magenta.xcor() and purple.xcor() > pink.xcor() and \
@@ -185,6 +250,7 @@ class TurtleRacer:
 
             print("\nPurple Turtle Wins!")
             self.celebrate(purple)
+            return 'purple'
 
         # Magenta turtle wins.
         if magenta.xcor() > pink.xcor() and magenta.xcor() > red.xcor() and \
@@ -195,6 +261,7 @@ class TurtleRacer:
 
             print("\nMagenta Turtle Wins!")
             self.celebrate(magenta)
+            return 'magenta'
 
         # Pink turtle wins.
         if pink.xcor() > red.xcor() and pink.xcor() > orange.xcor() and \
@@ -205,6 +272,7 @@ class TurtleRacer:
 
             print("\nPink Turtle Wins!")
             self.celebrate(pink)
+            return 'pink'
 
     @staticmethod
     def celebrate(turtle):
