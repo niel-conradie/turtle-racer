@@ -6,6 +6,10 @@ from random import randint
 class TurtleRacer:
     """ A class to represent a Turtle Racer game. """
 
+    def __init__(self):
+        """ Initialize class attributes. """
+        self.credits = 1000
+
     @staticmethod
     def create_screen():
         """ Display screen. """
