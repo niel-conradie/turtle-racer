@@ -37,8 +37,8 @@ def run():
         run.race(red, orange, yellow, lime, green,
                  cyan, blue, purple, magenta, pink)
         # Win conditions.
-        run.win_condition(run, red, orange, yellow, lime,
-                          green, cyan, blue, purple, magenta, pink)
+        run.win_condition(red, orange, yellow, lime, green,
+                          cyan, blue, purple, magenta, pink)
         # Requesting user input.
         run.restart()
 
