@@ -89,7 +89,7 @@ class TurtleRacer:
         return racer
 
     @staticmethod
-    def display_options():
+    def display_available_options():
         """ Display available color options. """
         print("\nColors: Red, Orange, Yellow, Lime, Green,\n "
               "       Cyan, Blue, Purple, Magenta, Pink.")
@@ -130,19 +130,19 @@ class TurtleRacer:
             self.credits -= amount
             return amount
 
-    def display_credits(self):
+    def display_available_credits(self):
         """ Display available credits. """
         print(f"\nCredits: {int(self.credits)}")
 
-    def check_credits(self):
-        """ Check available credits."""
+    def verify_available_credits(self):
+        """ Return True if the available credits are zero. """
         if self.credits == 0:
             print("\nGame Over!")
-            self.reset_credits()
-            return
+            self.reset_available_credits()
+            return True
 
-    def reset_credits(self):
-        """ Reset credits to default value. """
+    def reset_available_credits(self):
+        """ Reset available credits to default value. """
         self.credits = 1000
 
     @staticmethod
