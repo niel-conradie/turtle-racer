@@ -146,7 +146,7 @@ class TurtleRacer:
         self.credits = 1000
 
     @staticmethod
-    def race(red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
+    def start_race(red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink):
         """ Start the race. """
         while red.xcor() <= 450 and orange.xcor() <= 450 and \
                 yellow.xcor() <= 450 and lime.xcor() <= 450 and \
