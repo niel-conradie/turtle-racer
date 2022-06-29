@@ -124,7 +124,7 @@ class TurtleRacer:
     def bet_condition(self, winner, racer, amount):
         """ Add or subtract bet condition. """
         if winner == racer:
-            self.credits += (amount * 2)
+            self.credits += (amount * 10)
             return amount
         else:
             self.credits -= amount
