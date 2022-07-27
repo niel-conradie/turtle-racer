@@ -88,15 +88,12 @@ class TurtleRacer:
         return racer
 
     @staticmethod
-    def display_available_options():
-        """Display available color options."""
-        print("\nColors: Red, Orange, Yellow, Lime, Green,")
-        print("        Cyan, Blue, Purple, Magenta, Pink.")
-
-    @staticmethod
     def select_turtle():
         """Requesting user input and validating choice."""
         while True:
+            print("\nColors: Red, Orange, Yellow, Lime, Green,")
+            print("        Cyan, Blue, Purple, Magenta, Pink.")
+
             user_input = turtle.textinput("Select Turtle", "Color: ").lower()
             choices = [
                 "red",
@@ -378,8 +375,6 @@ class TurtleRacer:
                 magenta = self.create_turtle("magenta", -510, -185)
                 pink = self.create_turtle("pink", -510, -235)
 
-                # Display available color options.
-                self.display_available_options()
                 # Requesting user input.
                 racer = self.select_turtle()
                 # Requesting user input.
@@ -415,7 +410,9 @@ class TurtleRacer:
     def restart():
         """Requesting user input and validating choice."""
         while True:
-            user_input = turtle.textinput("Restart", "\nRestart? Yes/No: ").lower()
+            user_input = turtle.textinput(
+                "Play Again?", "\nType 'yes' or 'no': "
+            ).lower()
             choices = ["yes", "no"]
             if user_input not in choices:
                 print("\nPlease type 'yes' or 'no'")
