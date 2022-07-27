@@ -1,5 +1,6 @@
 import turtle
 
+from time import sleep
 from random import randint
 
 
@@ -349,6 +350,66 @@ class TurtleRacer:
         for i in range(72):
             turtle.right(5)
             turtle.shapesize(3)
+
+    def start_game(self):
+        """Starting the turtle racer game."""
+        # Display screen.
+        self.create_screen()
+        # Display heading.
+        self.draw_heading()
+
+        while True:
+
+            while True:
+                # Display track.
+                self.draw_track()
+                # Display finish line.
+                self.draw_finish_line()
+
+                # Create turtle racers.
+                red = self.create_turtle("red", -510, 215)
+                orange = self.create_turtle("orange", -510, 165)
+                yellow = self.create_turtle("yellow", -510, 115)
+                lime = self.create_turtle("lime", -510, 65)
+                green = self.create_turtle("green", -510, 15)
+                cyan = self.create_turtle("cyan", -510, -35)
+                blue = self.create_turtle("blue", -510, -85)
+                purple = self.create_turtle("purple", -510, -135)
+                magenta = self.create_turtle("magenta", -510, -185)
+                pink = self.create_turtle("pink", -510, -235)
+
+                # Display available color options.
+                self.display_available_options()
+                # Requesting user input.
+                racer = self.select_turtle()
+                # Requesting user input.
+                bet = self.place_bet()
+
+                # Pause for a second.
+                sleep(1)
+
+                # Starting the race.
+                self.start_race(
+                    red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink
+                )
+                # Winning turtle conditions.
+                winner = self.win_condition(
+                    red, orange, yellow, lime, green, cyan, blue, purple, magenta, pink
+                )
+                # Winning turtle bet conditions.
+                self.bet_condition(winner, racer, bet)
+                # Display available credits.
+                self.display_available_credits()
+                # Verify available credits.
+                if self.verify_available_credits() == True:
+                    break
+                else:
+                    continue
+
+            # Requesting user input.
+            self.restart()
+
+            continue
 
     @staticmethod
     def restart():
