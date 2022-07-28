@@ -42,7 +42,7 @@ Turtle Racer can be installed via [Pip](https://pypi.org/project/pip/). To start
 ----
 ## **Usage**
 
-To launch the Turtle Racer Game run thus file.
+To launch the Turtle Racer Game use thus file.
 ```bash
   run.py
 ```
