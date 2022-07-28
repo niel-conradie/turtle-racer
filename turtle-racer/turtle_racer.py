@@ -350,17 +350,15 @@ class TurtleRacer:
 
     def start_game(self):
         """Starting the turtle racer game."""
-        # Display screen.
+        # Display screen and heading.
         self.create_screen()
-        # Display heading.
         self.draw_heading()
 
         while True:
 
             while True:
-                # Display track.
+                # Display track and finish line.
                 self.draw_track()
-                # Display finish line.
                 self.draw_finish_line()
 
                 # Create turtle racers.
@@ -377,7 +375,6 @@ class TurtleRacer:
 
                 # Requesting user input.
                 racer = self.select_turtle()
-                # Requesting user input.
                 bet = self.place_bet()
 
                 # Pause for a second.
@@ -393,9 +390,9 @@ class TurtleRacer:
                 )
                 # Winning turtle bet conditions.
                 self.bet_condition(winner, racer, bet)
-                # Display available credits.
-                self.display_available_credits()
+
                 # Verify available credits.
+                self.display_available_credits()
                 if self.verify_available_credits() == True:
                     break
                 else:
