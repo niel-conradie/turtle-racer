@@ -15,8 +15,8 @@ Turtle Racer can be installed via [Pip](https://pypi.org/project/pip/). To start
 
 * **Clone Repository**
 ```bash
-  $ git clone https://github.com/niel-conradie/Turtle-Racer.git
-  $ cd Turtle-Racer
+  $ git clone https://github.com/niel-conradie/turtle-racer.git
+  $ cd turtle-racer
 ```
 ### **Pip Install**
 
