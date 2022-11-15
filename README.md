@@ -15,37 +15,38 @@ Turtle Racer can be installed via [Pip](https://pypi.org/project/pip/). To start
 
 * **Clone Repository**
 ```bash
-  $ git clone https://github.com/niel-conradie/turtle-racer.git
-  $ cd turtle-racer
+git clone https://github.com/niel-conradie/turtle-racer.git
+```
+* **Change Directory**
+```bash
+cd turtle-racer
 ```
 ### **Pip Install**
 
 * **Create Environment**
 ```bash
-  $ python -m venv .venv
+python -m venv .venv
 ```
 * **Activate Environment**
 ```bash
-  # Bash
-  $ source .venv/Scripts/activate
+# Bash
+$ source .venv/Scripts/activate
 
-  # Command Prompt
-  C:> .venv\Scripts\activate.bat
+# Command Prompt
+C:> .venv\Scripts\activate.bat
 
-  # macOS
-  $ .venv/bin/activate
+# macOS
+$ .venv/bin/activate
 
-  # PowerShell
-  PS C:> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-  PS C:> .venv\Scripts\Activate.ps1
+# PowerShell
+PS C:> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:> .venv\Scripts\Activate.ps1
 ```
 ----
 ## **Usage**
 
-To launch the Turtle Racer Game use thus file.
-```bash
-  run.py
-```
+- To launch the Turtle Racer game use the [run.py](https://github.com/niel-conradie/turtle-racer/blob/master/turtle-racer/run.py) file to start.
+
 ----
 ## **License**
 
