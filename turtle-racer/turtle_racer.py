@@ -419,5 +419,4 @@ class TurtleRacer:
             if user_input == "yes":
                 return
             if user_input == "no":
-                print("\nThank you for playing!")
-                quit()
+                quit("\nThank you for playing!")
