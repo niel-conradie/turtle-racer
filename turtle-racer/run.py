@@ -1,5 +1,3 @@
-from sys import exit
-
 from turtle_racer import TurtleRacer
 
 
@@ -12,7 +10,7 @@ def run():
         run.start_game()
     except KeyboardInterrupt:
         # Stopping the game.
-        exit("\nProgram Terminated")
+        quit("\nProgram Terminated")
 
 
 if __name__ == "__main__":
