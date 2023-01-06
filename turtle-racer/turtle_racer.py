@@ -91,9 +91,11 @@ class TurtleRacer:
     def select_turtle():
         """Requesting user input and validating choice."""
         while True:
+            # Display user input options.
             print("\nColors: Red, Orange, Yellow, Lime, Green,")
             print("        Cyan, Blue, Purple, Magenta, Pink.")
 
+            # Requesting user input.
             user_input = turtle.textinput("Select Turtle", "Color: ").lower()
             choices = [
                 "red",
@@ -107,6 +109,8 @@ class TurtleRacer:
                 "magenta",
                 "pink",
             ]
+            
+            # User input validation condition.            
             if user_input not in choices:
                 print(f"\n{user_input} is not an valid choice!")
                 continue
@@ -116,7 +120,10 @@ class TurtleRacer:
     def place_bet(self):
         """Requesting user input and validating number."""
         while True:
+            # Requesting user input.
             user_input = turtle.numinput("Place Bet", f"Credits: {int(self.credits)}")
+            
+            # User input validation conditions.
             if user_input > self.credits:
                 print("\nInsufficient funds!")
                 continue
@@ -138,13 +145,6 @@ class TurtleRacer:
     def display_available_credits(self):
         """Display available credits."""
         print(f"\nCredits: {int(self.credits)}")
-
-    def verify_available_credits(self):
-        """Return True if the available credits are zero."""
-        if self.credits == 0:
-            print("\nGame Over!")
-            self.reset_available_credits()
-            return True
 
     def reset_available_credits(self):
         """Reset available credits to default value."""
@@ -355,7 +355,7 @@ class TurtleRacer:
         self.draw_heading()
 
         while True:
-
+            # Main game loop.
             while True:
                 # Display track and finish line.
                 self.draw_track()
@@ -393,11 +393,13 @@ class TurtleRacer:
 
                 # Verify available credits.
                 self.display_available_credits()
-                if self.verify_available_credits() == True:
+                if self.credits == 0:
+                    print("\nGame Over!")
+                    self.reset_available_credits()
                     break
                 else:
                     continue
-
+                
             # Requesting user input.
             self.restart()
 
