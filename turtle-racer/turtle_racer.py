@@ -407,16 +407,19 @@ class TurtleRacer:
     def restart():
         """Requesting user input and validating choice."""
         while True:
+            # Requesting user input.
             user_input = turtle.textinput(
                 "Play Again?", "\nType 'yes' or 'no': "
             ).lower()
+            
+            # User input validation condition.           
             choices = ["yes", "no"]
             if user_input not in choices:
                 print("\nPlease type 'yes' or 'no'")
                 continue
 
-            # User input conditions.
+            # User input validated conditions.
             if user_input == "yes":
                 return
-            if user_input == "no":
+            elif user_input == "no":
                 quit("\nThank you for playing!")
