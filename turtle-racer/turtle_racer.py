@@ -96,21 +96,16 @@ class TurtleRacer:
             print("        Cyan, Blue, Purple, Magenta, Pink.")
 
             # Requesting user input.
-            user_input = turtle.textinput("Select Turtle", "Color: ").lower()
-            choices = [
-                "red",
-                "orange",
-                "yellow",
-                "lime",
-                "green",
-                "cyan",
-                "blue",
-                "purple",
-                "magenta",
-                "pink",
-            ]
+            try:
+                user_input = turtle.textinput("Select Turtle", "Color: ").lower()
+            except AttributeError:
+                quit()
             
-            # User input validation condition.            
+            # User input validation condition.   
+            choices = [
+                "red", "orange", "yellow", "lime", "green",
+                "cyan", "blue", "purple", "magenta", "pink",
+                ]
             if user_input not in choices:
                 print(f"\n{user_input} is not an valid choice!")
                 continue
@@ -121,17 +116,23 @@ class TurtleRacer:
         """Requesting user input and validating number."""
         while True:
             # Requesting user input.
-            user_input = turtle.numinput("Place Bet", f"Credits: {int(self.credits)}")
+            try:
+                user_input = turtle.numinput("Place Bet", f"Credits: {int(self.credits)}")
+            except AttributeError:
+                quit()
             
             # User input validation conditions.
-            if user_input > self.credits:
-                print("\nInsufficient funds!")
-                continue
-            elif user_input < 0:
-                print("\nThat is not a valid bet.")
-                continue
-            else:
-                return user_input
+            try:            
+                if user_input > self.credits:
+                    print("\nInsufficient funds!")
+                    continue
+                elif user_input < 0:
+                    print("\nThat is not a valid bet.")
+                    continue
+                else:
+                    return user_input
+            except TypeError:
+                quit()
 
     def bet_condition(self, winner, racer, amount):
         """Add or subtract bet condition."""
@@ -410,9 +411,12 @@ class TurtleRacer:
         """Requesting user input and validating choice."""
         while True:
             # Requesting user input.
-            user_input = turtle.textinput(
-                "Play Again?", "\nType 'yes' or 'no': "
-            ).lower()
+            try:
+                user_input = turtle.textinput(
+                    "Play Again?", "\nType 'yes' or 'no': "
+                    ).lower()
+            except AttributeError:
+                quit()
             
             # User input validation condition.           
             choices = ["yes", "no"]
