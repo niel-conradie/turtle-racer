@@ -1,8 +1,7 @@
 from turtle_racer import TurtleRacer
 
 
-def run():
-    """Turtle Racer."""
+if __name__ == "__main__":
     run = TurtleRacer()
 
     try:
@@ -11,7 +10,3 @@ def run():
     except KeyboardInterrupt:
         # Stopping the game.
         quit("\nProgram Terminated")
-
-
-if __name__ == "__main__":
-    run()
